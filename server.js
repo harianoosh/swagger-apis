@@ -133,7 +133,7 @@ const prices = {
  *              -application/json
  *          responses:
  *              200:
- *                  description: Successfully retrieved all the order details
+ *                  description: Successfully retrieved all the companies
  */
 app.get("/companies", async (req, res) => {
   try {
@@ -154,12 +154,12 @@ app.get("/companies", async (req, res) => {
  *                  application/json:
  *                      schema:
  *                          $ref: '#/components/parameters/schemas/Company'
- *          description: add a product tag into prices
+ *          description: add a company into companies
  *          produces:
  *              -application/json
  *          responses:
  *              200:
- *                  description: prices of all the available objects
+ *                  description: successfully added company details into database, get /companies to view changes
  *              400:
  *                  description: bad input criteria
  */
@@ -192,7 +192,7 @@ app.post("/company", async (req, res) => {
  *              -application/json
  *          responses:
  *              200:
- *                  description: successfully updated the price
+ *                  description: successfully updated the company details
  *              400:
  *                  description: provided id unavailable
  *              500:
@@ -200,7 +200,7 @@ app.post("/company", async (req, res) => {
  *          parameters:
  *              - in: path
  *                name: company_id
- *                description: food item id that needs to be updated
+ *                description: company id that needs to be updated
  *                type: string
  *                required: true
  *          requestBody:
@@ -247,7 +247,7 @@ app.put("/company/:company_id", async (req, res) => {
  *          parameters:
  *              - in: path
  *                name: company_id
- *                description: food item id that needs to be updated
+ *                description: company id that needs to be updated
  *                type: string
  *                required: true
  *          requestBody:
@@ -358,7 +358,7 @@ app.get("/orders", async (req, res) => {
  *              -application/json
  *          responses:
  *              200:
- *                  description: prices of all the available objects
+ *                  description: successfully added the order details into database
  *              400:
  *                  description: bad input criteria
  */
@@ -402,12 +402,12 @@ app.post("/order", async (req, res) => {
  * @swagger
  * /order/{order_id}:
  *      put:
- *          description: updated an object using id
+ *          description: updated the order using id
  *          produces:
  *              -application/json
  *          responses:
  *              200:
- *                  description: successfully updated the price
+ *                  description: successfully updated the order
  *              400:
  *                  description: provided id unavailable
  *              500:
@@ -415,7 +415,7 @@ app.post("/order", async (req, res) => {
  *          parameters:
  *              - in: path
  *                name: order_id
- *                description: food item id that needs to be updated
+ *                description: order id that needs to be updated
  *                type: string
  *                required: true
  *          requestBody:
@@ -479,7 +479,7 @@ app.put("/order/:order_id", async (req, res) => {
  *          parameters:
  *              - in: path
  *                name: order_id
- *                description: food item id that needs to be updated
+ *                description: order id that needs to be updated
  *                type: string
  *                required: true
  *          requestBody:
